@@ -1,0 +1,26 @@
+<div class="jumbotron">
+  <h1 class="display-4">Bem vindo ao Blog do NodeJS</h1>
+  <p class="lead">Silvio Santos Ipsum mah ooooee vem pra cá. Vem pra.</p>
+  <hr class="my-4">
+  <p>Silvio Santos Ipsum ma não existem mulher feiam, existem mulher que no conhece os produtos Jequitiamm. Boca sujuam... sem vergonhuamm.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Crie uma conta</a>
+</div>
+
+<hr>
+
+<h2>Postagens Recentes</h2>
+
+{{#each postagens}}
+<div class="card">
+    <div class="card-body">
+        <h3>{{titulo}}</h3>
+        <p>{{descricao}}</p>
+        <a href="/postagem/{{slug}}"><button class="btn btn-success">Leia Mais</button></a>    
+        <hr>
+        <small>{{categoria.nome}}</small> <br>
+        <small>Data de Publicação: {{data}}</small>
+    </div>
+</div>
+{{else}}
+    <h5>Nenhuma postagem</h5>
+{{/each}}
