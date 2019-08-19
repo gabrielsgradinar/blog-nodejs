@@ -17,12 +17,12 @@ module.exports = function(passport){
                 
                 bcrypt.compare(senha, usuario.senha, (erro, batem) => {
                     if(batem){
-                        return done(null, usuario)
+                        return done(null, usuario, {message: "Logado com sucesso !!"})
                     }else{
                         return done(null, false, {message: "Senha incorreta !!"})
                     }
                 });
-
+                
             }
         }).catch((erro) => {
             

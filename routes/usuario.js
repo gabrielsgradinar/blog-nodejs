@@ -46,6 +46,7 @@ router.post("/registro", (req, res) => {
                     nome: req.body.nome,
                     email: req.body.email,
                     senha: req.body.senha,
+                    eAdmin: 1
                 });
 
                 bcrypt.genSalt(10,(erro, salt) => {
@@ -81,13 +82,13 @@ router.get("/login", (req, res) => {
 });
 
 router.post("/login", (req, res, next) => {
-
+    
     passaport.authenticate("local", {
         successRedirect: "/",
         failureRedirect: "/usuarios/login",
-        failureFlash: true
-    })(req, res, next)
-
+        failureFlash: true,
+        successFlash: true,
+    })(req, res, next);
 });
 
 router.get("/logout", (req, res) => {

@@ -35,7 +35,9 @@
         res.locals.success_msg = req.flash("success_msg");
         res.locals.error_msg = req.flash("error_msg");
         res.locals.error = req.flash("error");
+        res.locals.success = req.flash("success");
         res.locals.user = req.user || null; //armazena as informações do usuario autenticado
+        res.locals.admin = req.admin || null;
         next()
     });
 
